@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ChromiePrice</string>
+    <string name="action_settings">Settings</string>
+    <string name="dialog_message">Selecting items for the form</string>
+    <string name="water">Water</string>
+    <string name="hot_water">Hot water</string>
+    <string name="cold_water">Cold water</string>
+    <string name="house_heating">House heating</string>
+    <string name="electric_power">Electric power</string>
+    <string name="gas">Gas</string>
+    <string name="parking_place">Parking place</string>
+    <string name="internet">Internet</string>
+    <string name="services">Services</string>
+    <string name="tv">Tv</string>
+    <string name="note">Note</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="current">Current</string>
+    <string name="previous">Previous</string>
+    <string name="difference">Difference</string>
+    <string name="to_pay">To pay</string>
+    <string name="final_amount">Final amount:</string>
+
+
+</resources>
