@@ -1,6 +1,5 @@
 package chromie_price.chromieprice.Dialogs;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -11,11 +10,13 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import chromie_price.chromieprice.Fragment.FormFragment;
 import chromie_price.chromieprice.R;
 
 public class DialogOfChoice extends DialogFragment implements View.OnClickListener {
 
     private TextView headText;
+
 
     private CheckBox water;
     private CheckBox elPower;
@@ -27,18 +28,14 @@ public class DialogOfChoice extends DialogFragment implements View.OnClickListen
     private CheckBox serv;
     private CheckBox parkPlace;
 
-    android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
-    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.dialog_of_choice, null);
+        View v = inflater.inflate(R.layout.dialog_of_choice, container, false);
         initView(v);
         return v;
     }
@@ -61,17 +58,40 @@ public class DialogOfChoice extends DialogFragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button_ok) {
-            if(water.isChecked()){ }
-            if(elPower.isChecked()){ }
-            if(gas.isChecked()){}
-            if(coldWater.isChecked()){}
-            if(hotWater.isChecked()){}
-            if(houseHeatint.isChecked()){}
-            if(internet.isChecked()){}
-            if(serv.isChecked()){}
-            if(parkPlace.isChecked()){}
-        } else { dismiss(); }
+            if (water.isChecked()) {
+            }
+            if (elPower.isChecked()) {
+            }
+            if (gas.isChecked()) {
+            }
+            if (coldWater.isChecked()) {
+            }
+            if (hotWater.isChecked()) {
+            }
+            if (houseHeatint.isChecked()) {
+            }
+            if (internet.isChecked()) {
+            }
+            if (serv.isChecked()) {
+            }
+            if (parkPlace.isChecked()) {
+            }
 
+            onCreateFormFragment();
+            dismiss();
+        } else {
+            dismiss();
+        }
+
+    }
+
+    private void onCreateFormFragment(){
+        android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FormFragment formFragment = new FormFragment();
+        fragmentTransaction.replace(R.id.fragment_conteiner, formFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }

@@ -1,33 +1,17 @@
 package chromie_price.chromieprice;
 
 import android.os.Bundle;
-import android.os.FileObserver;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-
-import chromie_price.chromieprice.Adapter.ParentRecyclerAdapter;
 import chromie_price.chromieprice.Dialogs.DialogOfChoice;
-import chromie_price.chromieprice.Item.ChildRecyclerItem;
-import chromie_price.chromieprice.Item.ParentRecyclerItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ParentRecyclerAdapter parentRecyclerAdapter;
-    private RecyclerView parentRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,37 +29,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        initRecyclerView();
-        loudItem();
     }
 
-    private void initRecyclerView() {
-        parentRecyclerView = findViewById(R.id.parent_recycler);
-        parentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        parentRecyclerAdapter = new ParentRecyclerAdapter(getApplicationContext());
-        parentRecyclerView.setAdapter(parentRecyclerAdapter);
-    }
-
-    private void loudItem() {
-        Collection<ParentRecyclerItem> parentList = getParentRecyclerItem();
-        parentRecyclerAdapter.setItems(parentList);
-    }
-
-    private Collection<ParentRecyclerItem> getParentRecyclerItem() {
-        ArrayList<ParentRecyclerItem> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(new ParentRecyclerItem(getChildRecyclerItem()));
-        }
-        return list;
-    }
-
-    private Collection<ChildRecyclerItem> getChildRecyclerItem() {
-        ArrayList<ChildRecyclerItem> list = new ArrayList<>();
-        for (int i = 1000000; i < 10000000; i+=1000000) {
-            list.add(new ChildRecyclerItem(String.valueOf(i), i, i, i, i, i));
-        }
-        return list;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
