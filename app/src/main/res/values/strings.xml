@@ -20,6 +20,7 @@
     <string name="difference">Difference</string>
     <string name="to_pay">To pay</string>
     <string name="final_amount">Final amount:</string>
+    <string name="tariff_water">tariff for 1 cube</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

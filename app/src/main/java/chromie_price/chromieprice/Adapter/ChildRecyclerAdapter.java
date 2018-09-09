@@ -19,9 +19,10 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
 
     List<ChildRecyclerItem> childItemList = new ArrayList<>();
 
+
     @NonNull
     @Override
-    public ChildViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int vieType) {
+    public ChildViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.chield_recycler_item, viewGroup, false);
 
@@ -60,7 +61,6 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
 
         public ChildViewHolder(@NonNull View itemView) {
             super(itemView);
-
             img = (ImageView) itemView.findViewById(R.id.img);
             current = (TextView) itemView.findViewById(R.id.current);
             previous = (TextView) itemView.findViewById(R.id.previous);
