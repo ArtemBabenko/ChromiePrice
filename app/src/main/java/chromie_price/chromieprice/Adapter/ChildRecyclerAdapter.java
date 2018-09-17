@@ -19,6 +19,9 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
 
     List<ChildRecyclerItem> childItemList = new ArrayList<>();
 
+    public ChildRecyclerAdapter(List<ChildRecyclerItem> childItemList) {
+        this.childItemList = childItemList;
+    }
 
     @NonNull
     @Override
@@ -31,7 +34,12 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ChildViewHolder childViewHolder, int possition) {
-        childViewHolder.bind(childItemList.get(possition));
+
+        //            img.setImageResource(childRecyclerItem.getImage());
+        childViewHolder.current.setText(String.valueOf(childItemList.get(possition).getCurrent()));
+        childViewHolder.previous.setText(String.valueOf(childItemList.get(possition).getPrevious()));
+        childViewHolder.difference.setText(String.valueOf(childItemList.get(possition).getDifference()));
+        childViewHolder.toPay.setText(String.valueOf(childItemList.get(possition).getToPay()));
     }
 
     @Override
@@ -40,14 +48,10 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
         return childItemList.size();
     }
 
-    public void setItems(Collection<ChildRecyclerItem> items) {
-        childItemList.addAll(items);
-        notifyDataSetChanged();
-    }
 
-    public void clearItems() {
-        childItemList.clear();
-        notifyDataSetChanged();
+    @Override
+    public boolean onFailedToRecycleView(@NonNull ChildViewHolder holder) {
+        return true;
     }
 
     public class ChildViewHolder extends RecyclerView.ViewHolder {
@@ -68,12 +72,5 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
             toPay = (TextView) itemView.findViewById(R.id.to_pay);
         }
 
-        public void bind(ChildRecyclerItem childRecyclerItem) {
-//            img.setImageResource(childRecyclerItem.getImage());
-            current.setText(String.valueOf(childRecyclerItem.getCurrent()));
-            previous.setText(String.valueOf(childRecyclerItem.getPrevious()));
-            difference.setText(String.valueOf(childRecyclerItem.getDifference()));
-            toPay.setText(String.valueOf(childRecyclerItem.getToPay()));
-        }
     }
 }
