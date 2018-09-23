@@ -8,6 +8,7 @@
     <color name="item_text">#FFFFFF</color>
     <color name="text_color">#424242</color>
     <color name="background_color">#FFFFFF</color>
+    <color name="list_arrow_color">#767575</color>
 
 
 </resources>
