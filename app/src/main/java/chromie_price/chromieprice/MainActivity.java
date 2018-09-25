@@ -1,17 +1,12 @@
 package chromie_price.chromieprice;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import chromie_price.chromieprice.Dialogs.DialogOfChoice;
-import chromie_price.chromieprice.Fragment.FormFragment;
 import chromie_price.chromieprice.Fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {

@@ -42,6 +42,7 @@ public class FormFragment extends Fragment implements View.OnClickListener {
         formRecyclerView.setAdapter(formRecyclerAdapter);
     }
 
+    //Подгрузка полей для листа
     private void loadDate() {
         Bundle bundle = this.getArguments();
         itemList = bundle.getStringArrayList(BUNDLE_KAY);
